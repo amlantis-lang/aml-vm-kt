@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     // Apply the application plugin to add support for building a CLI application.
     application
@@ -13,18 +15,27 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    // Align versions of all Kotlin components
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        verbose = true
+        apiVersion = "1.3"
+        languageVersion = "1.3"
+        jvmTarget = "12"
+        noReflect = false
+        noStdlib = false
+    }
+}
 
+dependencies {
     // Use the Kotlin JDK 8 standard library.
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("reflect"))
 
     // Use the Kotlin test library.
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation(kotlin("test"))
 
     // Use the Kotlin JUnit integration.
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+    testImplementation(kotlin("test-junit"))
 }
 
 application {
