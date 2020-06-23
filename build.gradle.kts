@@ -5,7 +5,7 @@ plugins {
     application
 
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    kotlin("jvm") version "1.3.50"
+    kotlin("jvm") version "1.3.72"
 }
 
 repositories {
@@ -20,9 +20,10 @@ tasks.withType<KotlinCompile> {
         verbose = true
         apiVersion = "1.3"
         languageVersion = "1.3"
-        jvmTarget = "12"
+        jvmTarget = "13"
         noReflect = false
         noStdlib = false
+        includeRuntime = true
     }
 }
 
