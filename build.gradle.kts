@@ -6,6 +6,8 @@ plugins {
 
     // Apply the Kotlin JVM plugin to add support for Kotlin.
     kotlin("jvm") version "1.3.72"
+
+    kotlin("kapt") version "1.3.72"
 }
 
 repositories {
@@ -31,6 +33,12 @@ dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("reflect"))
+
+    implementation("io.arrow-kt:arrow-core:0.10.5")
+    implementation("io.arrow-kt:arrow-syntax:0.10.5")
+    implementation("com.squareup.okio:okio:2.6.0")
+
+    kapt("io.arrow-kt:arrow-meta:0.10.5")
 
     // Use the Kotlin test library.
     testImplementation(kotlin("test"))
