@@ -1,4 +1,6 @@
 package org.aml.vm.library.system.lang
 
-interface SyntaxObject {
+import org.aml.vm.library.system.AnyObject
+
+interface SyntaxObject : AnyObject {
 }

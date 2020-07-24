@@ -1,4 +1,6 @@
 package org.aml.vm.library.system.io
 
-object Eof {
+import org.aml.vm.library.system.AnyObject
+
+object Eof : AnyObject {
 }

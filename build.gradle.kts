@@ -26,6 +26,7 @@ tasks.withType<KotlinCompile> {
         noReflect = false
         noStdlib = false
         includeRuntime = true
+        freeCompilerArgs = listOf("-Xinline-classes")
     }
 }
 

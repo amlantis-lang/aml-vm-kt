@@ -1,13 +1,14 @@
 package org.aml.vm.library.system.lang
 
 import arrow.core.Either
+import org.aml.vm.library.system.AnyObject
+import org.aml.vm.library.system.io.BufferedSourcePort
 import org.aml.vm.library.system.io.Eof
-import org.aml.vm.library.system.io.SourcePort
 
-interface Reader {
+interface Reader : AnyObject {
 
-    fun read(sourcePort: SourcePort): Any
+    fun read(sourcePort: BufferedSourcePort): Any
 
-    fun readSyntax(sourcePort: SourcePort): Either<Eof, SyntaxObject>
+    fun readSyntax(source: Any?, sourcePort: BufferedSourcePort): Either<Eof, SyntaxObject>
 
 }
