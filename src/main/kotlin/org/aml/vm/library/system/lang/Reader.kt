@@ -7,7 +7,7 @@ import org.aml.vm.library.system.io.Eof
 
 interface Reader : AnyObject {
 
-    fun read(sourcePort: BufferedSourcePort): Any
+    fun read(sourcePort: BufferedSourcePort): AnyObject
 
     fun readSyntax(source: Any?, sourcePort: BufferedSourcePort): Either<Eof, SyntaxObject>
 
