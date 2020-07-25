@@ -38,6 +38,7 @@ dependencies {
     implementation("io.arrow-kt:arrow-core:0.10.5")
     implementation("io.arrow-kt:arrow-syntax:0.10.5")
     implementation("com.squareup.okio:okio:2.6.0")
+    implementation("com.ibm.icu:icu4j:67.1")
 
     kapt("io.arrow-kt:arrow-meta:0.10.5")
 
@@ -46,6 +47,9 @@ dependencies {
 
     // Use the Kotlin JUnit integration.
     testImplementation(kotlin("test-junit"))
+
+    testImplementation("com.google.truth:truth:1.0.1")
+    testImplementation("com.google.truth.extensions:truth-java8-extension:1.0.1")
 }
 
 application {
