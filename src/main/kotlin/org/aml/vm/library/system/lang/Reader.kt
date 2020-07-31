@@ -9,6 +9,6 @@ interface Reader : AnyObject {
 
     fun read(sourcePort: BufferedSourcePort): AnyObject
 
-    fun readSyntax(source: AnyObject?, sourcePort: BufferedSourcePort): Either<Eof, SyntaxObject>
+    fun readSyntax(sourceName: AnyObject?, sourcePort: BufferedSourcePort): Either<Eof, SyntaxObject>
 
 }

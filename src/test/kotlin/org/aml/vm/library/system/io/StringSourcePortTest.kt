@@ -6,8 +6,6 @@ package org.aml.vm.library.system.io
 import com.google.common.truth.Truth.assertThat
 import okio.EOFException
 import okio.IOException
-import org.aml.vm.library.system.io.StringSourcePort
-import org.aml.vm.library.system.lang.RootReader
 import kotlin.test.Test
 
 class StringSourcePortTest {

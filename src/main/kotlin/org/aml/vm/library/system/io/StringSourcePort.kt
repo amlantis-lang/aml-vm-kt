@@ -11,7 +11,7 @@ import java.io.ByteArrayInputStream
 class StringSourcePort(source: String, override val name: Any) : BufferedSourcePort {
 
     private val wrappedSource = ByteArrayInputStream(source.toByteArray())
-            .source().buffer()
+        .source().buffer()
 
     override fun read(sink: Buffer, byteCount: Long): Long = wrappedSource.read(sink, byteCount)
 
