@@ -27,4 +27,12 @@ class AmlBaseLangReaderTest {
             .isNotNull()
     }
 
+    @Test
+    fun testRootReaderCanDispatchLangSwitch() {
+        val rootReader = Lang.Reader()
+        val result = rootReader.readSyntax(null, StringSourcePort("#lang Aml/Base\n", "string"))
+        assertThat(result)
+            .isNotNull()
+    }
+
 }

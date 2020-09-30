@@ -5,9 +5,9 @@ plugins {
     application
 
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    kotlin("jvm") version "1.3.72"
+    kotlin("jvm") version "1.4.10"
 
-    kotlin("kapt") version "1.3.72"
+    kotlin("kapt") version "1.4.10"
 }
 
 repositories {
@@ -20,9 +20,9 @@ repositories {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         verbose = true
-        apiVersion = "1.3"
-        languageVersion = "1.3"
-        jvmTarget = "13"
+        apiVersion = "1.4"
+        languageVersion = "1.4"
+        jvmTarget = "14"
         noReflect = false
         noStdlib = false
         includeRuntime = true
@@ -32,15 +32,16 @@ tasks.withType<KotlinCompile> {
 
 dependencies {
     // Use the Kotlin JDK 8 standard library.
+    implementation(kotlin("stdlib-jdk7"))
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("reflect"))
 
-    implementation("io.arrow-kt:arrow-core:0.10.5")
-    implementation("io.arrow-kt:arrow-syntax:0.10.5")
-    implementation("com.squareup.okio:okio:2.7.0")
+    implementation("io.arrow-kt:arrow-core:0.11.0")
+    implementation("io.arrow-kt:arrow-syntax:0.11.0")
+    implementation("com.squareup.okio:okio:2.8.0")
     implementation("com.ibm.icu:icu4j:67.1")
 
-    kapt("io.arrow-kt:arrow-meta:0.10.5")
+    kapt("io.arrow-kt:arrow-meta:0.11.0")
 
     // Use the Kotlin test library.
     testImplementation(kotlin("test"))
