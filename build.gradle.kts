@@ -36,12 +36,15 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("reflect"))
 
-    implementation("io.arrow-kt:arrow-core:0.11.0")
-    implementation("io.arrow-kt:arrow-syntax:0.11.0")
+    implementation(platform("io.arrow-kt:arrow-stack:0.13.2"))
+    implementation("io.arrow-kt:arrow-core")
+    implementation("io.arrow-kt:arrow-fx-coroutines")
+    implementation("io.arrow-kt:arrow-fx-stm")
+    implementation("io.arrow-kt:arrow-optics")
     implementation("com.squareup.okio:okio:2.8.0")
     implementation("com.ibm.icu:icu4j:67.1")
 
-    kapt("io.arrow-kt:arrow-meta:0.11.0")
+    kapt("io.arrow-kt:arrow-meta:0.13.2")
 
     // Use the Kotlin test library.
     testImplementation(kotlin("test"))

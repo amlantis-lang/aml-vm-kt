@@ -4,7 +4,6 @@ import arrow.core.Either
 import arrow.core.right
 import okio.EOFException
 import org.aml.vm.library.system.AnyObject
-import org.aml.vm.library.system.Cons
 import org.aml.vm.library.system.io.BufferedSourcePort
 import org.aml.vm.library.system.io.Eof
 import org.aml.vm.library.system.lang.SyntaxObject
@@ -61,7 +60,7 @@ object Lang {
                 TODO("Not yet implemented")
 
             } catch (eof: EOFException) {
-                return Either.left(Eof)
+                return Either.Left(Eof)
             }
         }
 
